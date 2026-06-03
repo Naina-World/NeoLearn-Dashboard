@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Learning Dashboard
+#Overview
 
-## Getting Started
+This project is a responsive Learning Dashboard built with Next.js 15, Tailwind CSS, Framer Motion, and Supabase.
 
-First, run the development server:
+The dashboard displays learning courses in a Bento Grid layout with animated course cards, progress tracking, and responsive design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#Tech Stack
+Next.js (App Router)
+React
+Tailwind CSS
+Framer Motion
+Supabase
+Lucide React Icons
+Architecture
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#The application follows a component-based architecture:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Data Layer
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Supabase is used as the backend database. Course information is stored in the courses table and fetched on the server.
 
-## Learn More
+Layout Layer
 
-To learn more about Next.js, take a look at the following resources:
+The BentoGrid component is responsible for arranging dashboard tiles using CSS Grid and responsive breakpoints.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Presentation Layer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#Reusable UI components are used to render individual pieces of the interface:
 
-## Deploy on Vercel
+HeroTile
+ActivityTile
+CourseCard
+ProgressBar
+MobileNav
+Sidebar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This separation improves maintainability and scalability.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Server / Client Component Split
+Server Components
+
+#app/page.js
+
+Fetches course data from Supabase
+Reduces client-side JavaScript
+Improves performance and initial load time
+Client Components
+
+Components using animations or browser interactions are marked with "use client":
+
+BentoGrid
+CourseCard
+ProgressBar
+MobileNav
+
+These components require client-side rendering because they use Framer Motion and interactive UI behavior.
+
+Features
+Responsive Bento Grid layout
+Framer Motion animations
+Dynamic Lucide icon rendering
+Supabase integration
+Course progress tracking
+Mobile-friendly navigation
