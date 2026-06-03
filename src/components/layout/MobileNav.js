@@ -11,8 +11,8 @@ const navItems = [
   { id: "settings", label: "Settings", icon: Settings },
 ];
 
-export default function MobileNav() {
-  const [active, setActive] = useState("home");
+export default function MobileNav({ active, setActive }) {
+  
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 md:hidden z-50 border-t border-white/10 bg-[#070B1A]/90 backdrop-blur-lg">
