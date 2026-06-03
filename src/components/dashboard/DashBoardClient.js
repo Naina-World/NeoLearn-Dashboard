@@ -53,7 +53,7 @@ export default function DashboardClient({ courses }) {
             default:
                 return (
                     <>
-                        <HeroTile />
+
                         <BentoGrid courses={courses} />
                     </>
                 );
