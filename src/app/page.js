@@ -4,21 +4,7 @@ import MobileNav from "@/components/layout/MobileNav";
 import { createClient } from "@supabase/supabase-js";
 
 export default async function Page() {
-  const [active, setActive] = useState("home");
-
-
-  const renderSection = () => {
-    switch (active) {
-      case "home":
-        return <BentoGrid />;
-      case "courses":
-        return <CourseCard />;
-      case "activity":
-        return <ActivityTile />;
-      default:
-        return <BentoGrid />;
-    }
-  };
+  
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -50,14 +36,7 @@ export default async function Page() {
       </section>
 
       {/* Mobile Navigation */}
-      {/* <MobileNav /> */}
-      <section className="min-h-screen bg-[#070B1A] text-white">
-        <div className="pb-20">
-          {renderSection()}
-        </div>
-
-        <MobileNav active={active} setActive={setActive} />
-      </section>
+      
     </main>
   );
 }
