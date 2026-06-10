@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 import Sidebar from "@/components/layout/Sidebar";
@@ -8,7 +7,7 @@ import MobileNav from "@/components/layout/MobileNav";
 import BentoGrid from "@/components/dashboard/BentoGrid";
 import CourseCard from "@/components/dashboard/CourseCard";
 import ActivityTile from "@/components/dashboard/ActivityTile";
-import HeroTile from "@/components/dashboard/HeroTile"; // ⚠️ check name
+
 
 export default function DashboardClient({ courses }) {
     const [active, setActive] = useState("home");
